@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+$lred: hsl(356, 100%, 66%); // Light red (CTA text)
+$vlred: hsl(355, 100%, 74%); // Very light red (CTA hover background)
+$heading: hsl(208, 49%, 24%); // Very dark blue (headings)
+
+
+$blue1: hsl(240, 2%, 79%); // Grayish blue (footer text)
+$blue2: hsl(207, 13%, 34%); // Very dark grayish blue (body copy)
+$blue3: hsl(240, 10%, 16%); // Very dark black blue (footer background)
+
+$grad-red: linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+$grad-blue: linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+
+
+// font-family: 'Overpass', sans-serif;
+// font-family: 'Ubuntu', sans-serif;
+
+*, ul, li *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+//  ##################################################
+div, section, header, footer {
+    border: 1px dashed white;
+}
+//  ##################################################
+
+body {
+    background-color: #ddd;
+    font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+}
+
+.header {
+    background-image:   url('./images/bg-pattern-intro.svg'),
+                        $grad-red; 
+                        
+    background-repeat: no-repeat, no-repeat;
+    background-size: 200% 200%, cover;
+    background-position: top -400px left -400px, center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    
+    border-radius: 0 0 0 5rem;
+    color: white;
+
+    text-align: center;
+
+    &__nav {
+        display: none;
+    }
+    &__top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        #img-logo {
+            margin: 2rem;
+            height: 40px;
+            width: auto;
+        }
+        #burger {
+            margin: 2rem;
+            padding: .2rem;
+
+            height: 40px;
+            width: 40px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        
+    }
+
+    &__hero {
+        h1 {
+            
+            font-size: 2.5rem;
+            padding: 3rem;
+            margin: .5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            margin: 1rem;
+        }
+        button {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 1rem;
+            border: 1px solid white;
+            border-radius: 3rem;
+
+            margin: .5rem 0 7rem 0;
+
+            cursor: pointer;
+        }
+        #start {
+            color: $lred;
+            background: white;
+        }
+        #learn {
+            color: white;
+            background: transparent;
+        }
+    }
+}

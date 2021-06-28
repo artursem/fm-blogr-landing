@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <script src="menu.js" defer></script>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>[Blogr] | Frontend Mentor </title>
 </head>
 <body>
   <main>
-    <header>
-      <img src="./images/logo.svg" alt="logo">
-      <img src="./images/icon-hamburger.svg" alt="menu" id="burger">
-      <nav class="nav">
+    <header class="header">
+      <div class="header__top">
+        <img src="./images/logo.svg" alt="logo" id="img-logo">
+        <button id="burger">
+          <img src="./images/icon-hamburger.svg" alt="menu">
+        </button>
+      </div>
+      <nav class="header__nav">
         <div class="menu"><ul class="nav__main">
           <li><a href="#">Product</a>
             <ul class="nav__main__sub">
@@ -45,12 +50,15 @@
           <button>Sign Up</button>
         </div>
       </nav>
+      <section class="header__hero">
+        <h1>A modern publishing platform</h1>
+        <p>Grow your audience and build your online brand</p>
+        <p>
+          <button id="start">Start for Free</button>
+          <button id="learn">Learn More</button>
+        </p>
+      </section>
     </header>
-    <section class="hero">
-      <h1>A modern publishing platform</h1>
-      <p>Grow your audience and build your online brand</p>
-      <p><button>Start for Free</button><button>Learn More</button></p>
-    </section>
     <section class="s1">
       <h2>Designed for the future</h2>
       <h3>Introducing an extensible editor</h3>
