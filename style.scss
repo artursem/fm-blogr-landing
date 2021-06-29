@@ -64,7 +64,10 @@ body {
 
     &__nav {
         display: block;
-        width: min(90vw, 500px);
+        position: absolute;
+        top: 5rem;
+        left: 10vw;
+        width: 80vw;
         margin: auto;
         padding: 2rem;
         background: white;
@@ -73,10 +76,6 @@ body {
             color: $blue2;
             text-decoration: none;
             font-weight: 600;
-        }
-        a::after {
-            content: url('./images/icon-arrow-dark.svg');
-            padding: .5rem;
         }
         a:hover {
             color: $blue3;

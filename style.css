@@ -35,7 +35,10 @@ body {
 }
 .header__nav {
   display: block;
-  width: min(90vw, 500px);
+  position: absolute;
+  top: 5rem;
+  left: 10vw;
+  width: 80vw;
   margin: auto;
   padding: 2rem;
   background: white;
@@ -45,10 +48,6 @@ body {
   color: #4b5862;
   text-decoration: none;
   font-weight: 600;
-}
-.header__nav a::after {
-  content: url("./images/icon-arrow-dark.svg");
-  padding: 0.5rem;
 }
 .header__nav a:hover {
   color: #25252d;
