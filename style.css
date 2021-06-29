@@ -9,28 +9,32 @@ li {
   list-style: none;
 }
 
+p {
+  line-height: 1.8rem;
+}
+
 div, section, header, footer {
   border: 1px dashed white;
 }
 
 body {
-  background-color: #ddd;
+  background-color: #fff;
   font-family: "Overpass", sans-serif;
   font-size: 16px;
+  text-align: center;
 }
 
 .header {
   background-image: url("./images/bg-pattern-intro.svg"), linear-gradient(#ff8f70, #ff3d54);
   background-repeat: no-repeat, no-repeat;
-  background-size: 200% 200%, cover;
-  background-position: top -400px left -400px, center;
+  background-size: 300vw 300vw, cover;
+  background-position: top 50% left 30%, center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   border-radius: 0 0 0 5rem;
   color: white;
-  text-align: center;
 }
 .header__nav {
   display: none;
@@ -57,13 +61,13 @@ body {
 }
 .header__hero h1 {
   font-size: 2.5rem;
-  padding: 3rem;
+  padding: 3rem 1rem 2rem 1rem;
   margin: 0.5rem;
 }
 .header__hero p {
   font-size: 1.2rem;
   line-height: 1.5rem;
-  margin: 1rem;
+  margin: 2.5rem;
 }
 .header__hero button {
   font-family: "Ubuntu", sans-serif;
@@ -72,7 +76,7 @@ body {
   padding: 1rem;
   border: 1px solid white;
   border-radius: 3rem;
-  margin: 0.5rem 0 7rem 0;
+  margin: 2rem 0 7rem 0;
   cursor: pointer;
 }
 .header__hero #start {
@@ -82,6 +86,43 @@ body {
 .header__hero #learn {
   color: white;
   background: transparent;
+}
+
+.s1 {
+  color: #4b5862;
+  padding: 2.5rem;
+}
+.s1 h2 {
+  color: #1f3f5b;
+  margin: 1.5rem;
+}
+.s1__illustration {
+  width: 90vw;
+  height: min(80vw, 500px);
+  background: url("./images/illustration-editor-mobile.svg") center no-repeat;
+}
+
+.s2 {
+  margin-top: 10rem;
+  background: url("./images/bg-pattern-circles.svg"), linear-gradient(#2c2d3f, #3f4164);
+  background-repeat: no-repeat;
+  background-size: 120vw 120vw, contain;
+  background-position: top -50vw center, center;
+  border-radius: 0 6rem;
+  padding: 2.5rem;
+}
+.s2__illustration {
+  margin-top: max(-50vw, -200px);
+  width: min(70vw, 450px);
+}
+.s2 h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin: 1.5rem;
+}
+.s2 p {
+  color: white;
+  margin-bottom: 8rem;
 }
 
 /*# sourceMappingURL=style.css.map */
