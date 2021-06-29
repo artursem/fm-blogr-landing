@@ -63,8 +63,78 @@ body {
 
 
     &__nav {
-        display: none;
+        display: block;
+        width: min(90vw, 500px);
+        margin: auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 1rem;
+        a {
+            color: $blue2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a::after {
+            content: url('./images/icon-arrow-dark.svg');
+            padding: .5rem;
+        }
+        a:hover {
+            color: $blue3;
+        }
+        &__main {
+            a {
+                font-size: 1.2rem;
+            }
+            li {
+                padding: 1rem;
+            }
+        }
+        &__main__sub {
+            background: #eee;
+            border-radius: .5rem;
+            a {
+                font-size: 1rem;
+            }
+            a::after {
+                content: '';
+            }
+        }
+        .menu__buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            button {
+                margin: 0;
+                padding: 1rem;
+            }
+
+            #btn-login {
+                width: 40%;
+                color: $blue3;
+                background: white;
+            }
+            #btn-login:active, #btn-login:hover {
+                color: white;
+                background-color: $vlred;
+            }
+        
+            #btn-signup {
+                width: 40%;
+                color: white;
+                background: $grad-red;
+            }
+            #btn-signup:active, #btn-signup:hover {
+                color: $lred;
+                background: white;
+            }
+        }
+
+        
+
     }
+
+
     &__top {
         display: flex;
         flex-direction: row;
@@ -101,35 +171,36 @@ body {
             line-height: 1.5rem;
             margin: 2.5rem;
         }
-        button {
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            padding: 1rem;
-            border: 1px solid white;
-            border-radius: 3rem;
+    }
 
-            margin: 2rem .5rem 7rem .5rem;
+    button {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 1rem;
+        border: 1px solid white;
+        border-radius: 3rem;
 
-            cursor: pointer;
-        }
-        #start {
-            color: $lred;
-            background: white;
-        }
-        #start:active, #start:hover {
-            color: white;
-            background-color: $vlred;
-        }
+        margin: 2rem .5rem 7rem .5rem;
 
-        #learn {
-            color: white;
-            background: transparent;
-        }
-        #learn:active, #learn:hover {
-            color: $lred;
-            background: white;
-        }
+        cursor: pointer;
+    }
+    #btn-start {
+        color: $lred;
+        background: white;
+    }
+    #btn-start:active, #btn-start:hover {
+        color: white;
+        background-color: $vlred;
+    }
+
+    #btn-learn {
+        color: white;
+        background: transparent;
+    }
+    #btn-learn:active, #btn-learn:hover {
+        color: $lred;
+        background: white;
     }
 }
 

@@ -34,7 +34,68 @@ body {
   color: white;
 }
 .header__nav {
-  display: none;
+  display: block;
+  width: min(90vw, 500px);
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+}
+.header__nav a {
+  color: #4b5862;
+  text-decoration: none;
+  font-weight: 600;
+}
+.header__nav a::after {
+  content: url("./images/icon-arrow-dark.svg");
+  padding: 0.5rem;
+}
+.header__nav a:hover {
+  color: #25252d;
+}
+.header__nav__main a {
+  font-size: 1.2rem;
+}
+.header__nav__main li {
+  padding: 1rem;
+}
+.header__nav__main__sub {
+  background: #eee;
+  border-radius: 0.5rem;
+}
+.header__nav__main__sub a {
+  font-size: 1rem;
+}
+.header__nav__main__sub a::after {
+  content: "";
+}
+.header__nav .menu__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav .menu__buttons button {
+  margin: 0;
+  padding: 1rem;
+}
+.header__nav .menu__buttons #btn-login {
+  width: 40%;
+  color: #25252d;
+  background: white;
+}
+.header__nav .menu__buttons #btn-login:active, .header__nav .menu__buttons #btn-login:hover {
+  color: white;
+  background-color: #ff7a85;
+}
+.header__nav .menu__buttons #btn-signup {
+  width: 40%;
+  color: white;
+  background: linear-gradient(#ff8f70, #ff3d54);
+}
+.header__nav .menu__buttons #btn-signup:active, .header__nav .menu__buttons #btn-signup:hover {
+  color: #ff525d;
+  background: white;
 }
 .header__top {
   display: flex;
@@ -66,7 +127,7 @@ body {
   line-height: 1.5rem;
   margin: 2.5rem;
 }
-.header__hero button {
+.header button {
   font-family: "Ubuntu", sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -76,19 +137,19 @@ body {
   margin: 2rem 0.5rem 7rem 0.5rem;
   cursor: pointer;
 }
-.header__hero #start {
+.header #btn-start {
   color: #ff525d;
   background: white;
 }
-.header__hero #start:active, .header__hero #start:hover {
+.header #btn-start:active, .header #btn-start:hover {
   color: white;
   background-color: #ff7a85;
 }
-.header__hero #learn {
+.header #btn-learn {
   color: white;
   background: transparent;
 }
-.header__hero #learn:active, .header__hero #learn:hover {
+.header #btn-learn:active, .header #btn-learn:hover {
   color: #ff525d;
   background: white;
 }
