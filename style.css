@@ -50,13 +50,12 @@ body {
   text-decoration: none;
   font-weight: 600;
 }
-.header__nav a:after {
-  content: url(./images/icon-arrow-dark.svg);
-  margin: 5px;
-  transform: scale(2);
-}
 .header__nav a:hover {
   color: #25252d;
+}
+.header__nav img {
+  margin: 3px 3px 3px 5px;
+  transform: rotate(0deg);
 }
 .header__nav__main a {
   font-size: 1.2rem;

@@ -13,6 +13,11 @@ const linkCompany = document.querySelector('.link-company');
 const linkConnect = document.querySelector('.link-connect');
 
 
+const arrowProduct = document.querySelector('.arrow-product');
+const arrowCompany = document.querySelector('.arrow-company');
+const arrowConnect = document.querySelector('.arrow-connect');
+
+
 let isOpen = false;
 const menuOpen = () => {
     if (isOpen) {
@@ -30,13 +35,15 @@ let isRolled = false;
 function linkRoll(index) {
     let clicked = index.path[0].innerHTML.toLowerCase();
     let clickedMenu = [...subMenu].find(x => x.classList.contains(`list-${clicked}`));
+    let clickedArrow = document.querySelector(`.arrow-${clicked}`);
 
     if (isRolled) {
         clickedMenu.style.display = 'none';
-        //################3 OBRÓT STRZAŁKI! img?
+        clickedArrow.style.transform = 'rotate(0deg)';
         isRolled = false;
     } else {
         clickedMenu.style.display = 'block';
+        clickedArrow.style.transform = 'rotate(180deg)';
         isRolled = true;
     }
     
@@ -48,3 +55,12 @@ linkPrimary.forEach((link, i) => {
 });
 
 // ############# ZAMYKANIE MENU
+document.addEventListener('click', e => {
+    if (isOpen && burger.contains(e.target) || nav.contains(e.target) ) {
+        console.log('ok');
+    } else {
+        burgerIcon.src = './images/icon-hamburger.svg';
+        nav.style.display = 'none';
+        isOpen = false;
+    }
+})
