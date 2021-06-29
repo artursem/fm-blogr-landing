@@ -73,16 +73,24 @@ body {
   padding: 1rem;
   border: 1px solid white;
   border-radius: 3rem;
-  margin: 2rem 0 7rem 0;
+  margin: 2rem 0.5rem 7rem 0.5rem;
   cursor: pointer;
 }
 .header__hero #start {
   color: #ff525d;
   background: white;
 }
+.header__hero #start:active, .header__hero #start:hover {
+  color: white;
+  background-color: #ff7a85;
+}
 .header__hero #learn {
   color: white;
   background: transparent;
+}
+.header__hero #learn:active, .header__hero #learn:hover {
+  color: #ff525d;
+  background: white;
 }
 
 .s1, .s3 {

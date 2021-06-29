@@ -109,7 +109,7 @@ body {
             border: 1px solid white;
             border-radius: 3rem;
 
-            margin: 2rem 0 7rem 0;
+            margin: 2rem .5rem 7rem .5rem;
 
             cursor: pointer;
         }
@@ -117,9 +117,18 @@ body {
             color: $lred;
             background: white;
         }
+        #start:active, #start:hover {
+            color: white;
+            background-color: $vlred;
+        }
+
         #learn {
             color: white;
             background: transparent;
+        }
+        #learn:active, #learn:hover {
+            color: $lred;
+            background: white;
         }
     }
 }
