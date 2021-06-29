@@ -34,7 +34,7 @@ body {
   color: white;
 }
 .header__nav {
-  display: block;
+  display: none;
   position: absolute;
   top: 5rem;
   left: 10vw;
@@ -43,11 +43,17 @@ body {
   padding: 2rem;
   background: white;
   border-radius: 1rem;
+  box-shadow: 5px 5px 1rem 0.1rem rgba(0, 0, 0, 0.2);
 }
 .header__nav a {
   color: #4b5862;
   text-decoration: none;
   font-weight: 600;
+}
+.header__nav a:after {
+  content: url(./images/icon-arrow-dark.svg);
+  margin: 5px;
+  transform: scale(2);
 }
 .header__nav a:hover {
   color: #25252d;
@@ -59,6 +65,7 @@ body {
   padding: 1rem;
 }
 .header__nav__main__sub {
+  display: none;
   background: #eee;
   border-radius: 0.5rem;
 }
@@ -68,18 +75,26 @@ body {
 .header__nav__main__sub a::after {
   content: "";
 }
+.header__nav .divider {
+  margin: 1rem 0 1rem 0;
+  color: #c8c8cb;
+  border-top: 1px solid #c8c8cb;
+  width: 90% px;
+  height: 0px;
+}
 .header__nav .menu__buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2rem;
 }
 .header__nav .menu__buttons button {
-  margin: 0;
+  margin: 0.5rem;
   padding: 1rem;
 }
 .header__nav .menu__buttons #btn-login {
-  width: 40%;
+  width: 80%;
   color: #25252d;
   background: white;
 }
@@ -88,7 +103,7 @@ body {
   background-color: #ff7a85;
 }
 .header__nav .menu__buttons #btn-signup {
-  width: 40%;
+  width: 80%;
   color: white;
   background: linear-gradient(#ff8f70, #ff3d54);
 }
@@ -124,7 +139,7 @@ body {
 .header__hero p {
   font-size: 1.2rem;
   line-height: 1.5rem;
-  margin: 2.5rem;
+  margin: 2.5rem 1rem 4rem 1rem;
 }
 .header button {
   font-family: "Ubuntu", sans-serif;
@@ -133,12 +148,13 @@ body {
   padding: 1rem;
   border: 1px solid white;
   border-radius: 3rem;
-  margin: 2rem 0.5rem 7rem 0.5rem;
+  margin: 1rem 0.5rem 1rem 0.5rem;
   cursor: pointer;
 }
 .header #btn-start {
   color: #ff525d;
   background: white;
+  width: 150px;
 }
 .header #btn-start:active, .header #btn-start:hover {
   color: white;
@@ -147,6 +163,7 @@ body {
 .header #btn-learn {
   color: white;
   background: transparent;
+  width: 150px;
 }
 .header #btn-learn:active, .header #btn-learn:hover {
   color: #ff525d;

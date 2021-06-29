@@ -63,7 +63,7 @@ body {
 
 
     &__nav {
-        display: block;
+        display: none;
         position: absolute;
         top: 5rem;
         left: 10vw;
@@ -72,10 +72,17 @@ body {
         padding: 2rem;
         background: white;
         border-radius: 1rem;
+
+        box-shadow: 5px 5px 1rem .1rem rgba(0,0,0, 0.2);
         a {
             color: $blue2;
             text-decoration: none;
             font-weight: 600;
+        }
+        a:after {
+            content: url(./images/icon-arrow-dark.svg);
+            margin: 5px;
+            transform: scale(2);
         }
         a:hover {
             color: $blue3;
@@ -89,6 +96,7 @@ body {
             }
         }
         &__main__sub {
+            display: none;
             background: #eee;
             border-radius: .5rem;
             a {
@@ -98,18 +106,26 @@ body {
                 content: '';
             }
         }
+        .divider {
+            margin: 1rem 0 1rem 0;
+            color: $blue1;
+            border-top: 1px solid $blue1;
+            width: 90%px;
+            height: 0px;
+        }
         .menu__buttons {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: 2rem;
             button {
-                margin: 0;
+                margin: .5rem;
                 padding: 1rem;
             }
 
             #btn-login {
-                width: 40%;
+                width: 80%;
                 color: $blue3;
                 background: white;
             }
@@ -119,7 +135,7 @@ body {
             }
         
             #btn-signup {
-                width: 40%;
+                width: 80%;
                 color: white;
                 background: $grad-red;
             }
@@ -168,7 +184,7 @@ body {
         p {
             font-size: 1.2rem;
             line-height: 1.5rem;
-            margin: 2.5rem;
+            margin: 2.5rem 1rem 4rem 1rem;
         }
     }
 
@@ -180,13 +196,14 @@ body {
         border: 1px solid white;
         border-radius: 3rem;
 
-        margin: 2rem .5rem 7rem .5rem;
+        margin: 1rem .5rem 1rem .5rem;
 
         cursor: pointer;
     }
     #btn-start {
         color: $lred;
         background: white;
+        width: 150px;
     }
     #btn-start:active, #btn-start:hover {
         color: white;
@@ -196,6 +213,7 @@ body {
     #btn-learn {
         color: white;
         background: transparent;
+        width: 150px;
     }
     #btn-learn:active, #btn-learn:hover {
         color: $lred;
