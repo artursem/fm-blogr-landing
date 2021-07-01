@@ -2,21 +2,15 @@ const burger = document.querySelector('#burger');
 const burgerIcon = burger.querySelector('img');
 const nav = document.querySelector('.header__nav');
 
-const subMenu = [...document.querySelectorAll('.header__nav__main__sub')];
-const subMenuProduct = document.querySelector('.list-product');
-const subMenuCompany = document.querySelector('.list-company');
-const subMenuConnect = document.querySelector('.list-connect');
-
-const linkPrimary = document.querySelectorAll('.link-primary');
-const linkProduct = document.querySelector('.link-product');
-const linkCompany = document.querySelector('.link-company');
-const linkConnect = document.querySelector('.link-connect');
+const primaryList = [...nav.querySelectorAll('.header__nav__main')];
+const primaryLinks = [...nav.querySelectorAll('.link-primary')];
+const primaryArrows = [...nav.querySelectorAll('img')];
+const secondaryList = [...nav.querySelectorAll('.header__nav__main__sub')];
 
 
-const arrowProduct = document.querySelector('.arrow-product');
-const arrowCompany = document.querySelector('.arrow-company');
-const arrowConnect = document.querySelector('.arrow-connect');
-
+// console.log(primaryLinks);
+// console.log(primaryArrows);
+// console.log(secondaryList);
 
 let isOpen = false;
 const menuOpen = () => {
@@ -31,61 +25,50 @@ const menuOpen = () => {
         isOpen = true;
     }
 }
-
 let isRolled = false;
-function showSubMenu(menu) {
-    subMenu.forEach(x => x.style.display = 'none');
+const rollMenu = (i) => {
+    console.log(i);
     
-    if (isRolled === menu) {
-        menu.style.display = 'none';
-        
-        return isRolled = false;
+    if (isRolled === false) {
+        primaryArrows[i].style.transform = 'rotate(180deg)';
+        secondaryList[i].style.display = 'block';
+        isRolled = i;
+        return isRolled;
+    } else if (isRolled === i) {
+        primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
+        secondaryList.forEach(list => list.style.display = 'none');
+
+        isRolled = false;
+        return isRolled;
     } else {
-        menu.style.display = 'block';
-        return isRolled = menu;
-    }
-}
+        primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
+        secondaryList.forEach(list => list.style.display = 'none');
 
 
-function linkRoll(menu) {
-    let target = menu.target.classList[0];
-    if (target.includes('product')) {
-        showSubMenu(subMenuProduct);
-    } else if (target.includes('company')) {
-        showSubMenu(subMenuCompany);
-    } else if (target.includes('connect')) {
-        showSubMenu(subMenuConnect);
+        primaryArrows[i].style.transform = 'rotate(180deg)';
+        secondaryList[i].style.display = 'block';
+        isRolled = i;
+        return isRolled;
     }
 
 }
 
-// let isRolled = false;
-
-// function linkRoll(index) {
-//     let clicked = index.path[0].innerHTML.toLowerCase();
-//     let clickedMenu = [...subMenu].find(x => x.classList.contains(`list-${clicked}`));
-//     let clickedArrow = document.querySelector(`.arrow-${clicked}`);
-
-//     if (isRolled) {
-//         clickedMenu.style.display = 'none';
-//         clickedArrow.style.transform = 'rotate(0deg)';
-//         isRolled = false;
-//     } else {
-//         // subMenu.forEach(menu => menu.style.display = 'none');
-//         clickedMenu.style.display = 'block';
+const linkClicked = (e) => {
+    // console.log([...e.target.classList][0]);
+    if ([...e.target.classList][0] === 'link-product') {
+        rollMenu(0);
+    }  else if ([...e.target.classList][0] === 'link-company') {
+        rollMenu(1);
+    } else if ([...e.target.classList][0] === 'link-connect') {
+        rollMenu(2);
+    }
+}
 
 
-//         // close others
-//         clickedArrow.style.transform = 'rotate(180deg)';
-//         isRolled = true;
-//     }
-// }
+
+primaryLinks.forEach(link => link.addEventListener('click', linkClicked));
 
 burger.addEventListener('click', menuOpen);
-linkPrimary.forEach((link, i) => {
-    link.addEventListener('click', linkRoll);
-});
-
 // ############# ZAMYKANIE MENU
 document.addEventListener('click', e => {
     if (isOpen && burger.contains(e.target) || nav.contains(e.target) ) {

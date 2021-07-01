@@ -57,7 +57,7 @@ body {
   margin: 3px 3px 3px 5px;
   transform: rotate(0deg);
 }
-.header__nav__main a {
+.header__nav__main a.link-primary {
   font-size: 1.2rem;
 }
 .header__nav__main li {
