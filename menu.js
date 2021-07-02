@@ -8,17 +8,13 @@ const primaryArrows = [...nav.querySelectorAll('img')];
 const secondaryList = [...nav.querySelectorAll('.header__nav__main__sub')];
 
 
-// console.log(primaryLinks);
-// console.log(primaryArrows);
-// console.log(secondaryList);
-
 let isOpen = false;
 const menuOpen = () => {
     if (isOpen) {
         burgerIcon.src = './images/icon-hamburger.svg';
         nav.style.display = 'none';
         isOpen = false;
-        // return isRolled = false ????
+        // isRolled = false; ##########################################
     } else {
         burgerIcon.src = './images/icon-close.svg';
         nav.style.display = 'block'
@@ -27,26 +23,29 @@ const menuOpen = () => {
 }
 let isRolled = false;
 const rollMenu = (i) => {
-    console.log(i);
-    
     if (isRolled === false) {
         primaryArrows[i].style.transform = 'rotate(180deg)';
-        secondaryList[i].style.display = 'block';
+        // secondaryList[i].style.display = 'block';
+        
+        secondaryList[i].style.height = '100px';
+
         isRolled = i;
         return isRolled;
     } else if (isRolled === i) {
         primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
-        secondaryList.forEach(list => list.style.display = 'none');
+        // secondaryList.forEach(list => list.style.display = 'none');
+        secondaryList.forEach(list => list.style.height = '0');
 
         isRolled = false;
         return isRolled;
     } else {
         primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
-        secondaryList.forEach(list => list.style.display = 'none');
-
+        // secondaryList.forEach(list => list.style.display = 'none');
+        secondaryList.forEach(list => list.style.height = '0');
 
         primaryArrows[i].style.transform = 'rotate(180deg)';
-        secondaryList[i].style.display = 'block';
+        // secondaryList[i].style.display = 'block';
+        secondaryList[i].style.height = '100px';
         isRolled = i;
         return isRolled;
     }
@@ -54,7 +53,6 @@ const rollMenu = (i) => {
 }
 
 const linkClicked = (e) => {
-    // console.log([...e.target.classList][0]);
     if ([...e.target.classList][0] === 'link-product') {
         rollMenu(0);
     }  else if ([...e.target.classList][0] === 'link-company') {
@@ -67,7 +65,6 @@ const linkClicked = (e) => {
 
 
 primaryLinks.forEach(link => link.addEventListener('click', linkClicked));
-
 burger.addEventListener('click', menuOpen);
 // ############# ZAMYKANIE MENU
 document.addEventListener('click', e => {

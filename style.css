@@ -64,9 +64,11 @@ body {
   padding: 1rem;
 }
 .header__nav__main__sub {
-  display: none;
+  height: 0;
+  overflow: hidden;
   background: #eee;
   border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 .header__nav__main__sub a {
   font-size: 1rem;

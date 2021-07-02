@@ -95,9 +95,13 @@ body {
             }
         }
         &__main__sub {
-            display: none;
+            // display: none;
+            height: 0;
+            overflow: hidden;
             background: #eee;
             border-radius: .5rem;
+
+            transition: all 0.3s ease-in-out;
             a {
                 font-size: 1rem;
             }
