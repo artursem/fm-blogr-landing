@@ -85,6 +85,7 @@ body {
         img {
             margin: 3px 3px 3px 5px;
             transform: rotate(0deg);
+            transition: transform 0.3s ease-in-out;
         }
         &__main {
             a.link-primary {
@@ -95,13 +96,12 @@ body {
             }
         }
         &__main__sub {
-            // display: none;
-            height: 0;
+            max-height: 0;
             overflow: hidden;
             background: #eee;
             border-radius: .5rem;
 
-            transition: all 0.3s ease-in-out;
+            transition: max-height 0.3s ease-in-out;
             a {
                 font-size: 1rem;
             }

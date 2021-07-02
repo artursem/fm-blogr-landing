@@ -27,25 +27,25 @@ const rollMenu = (i) => {
         primaryArrows[i].style.transform = 'rotate(180deg)';
         // secondaryList[i].style.display = 'block';
         
-        secondaryList[i].style.height = '100px';
+        secondaryList[i].style.maxHeight = '1000px';
 
         isRolled = i;
         return isRolled;
     } else if (isRolled === i) {
         primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
         // secondaryList.forEach(list => list.style.display = 'none');
-        secondaryList.forEach(list => list.style.height = '0');
+        secondaryList.forEach(list => list.style.maxHeight = '0');
 
         isRolled = false;
         return isRolled;
     } else {
         primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
         // secondaryList.forEach(list => list.style.display = 'none');
-        secondaryList.forEach(list => list.style.height = '0');
+        secondaryList.forEach(list => list.style.maxHeight = '0');
 
         primaryArrows[i].style.transform = 'rotate(180deg)';
         // secondaryList[i].style.display = 'block';
-        secondaryList[i].style.height = '100px';
+        secondaryList[i].style.maxHeight = '1000px';
         isRolled = i;
         return isRolled;
     }

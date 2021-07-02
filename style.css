@@ -56,6 +56,7 @@ body {
 .header__nav img {
   margin: 3px 3px 3px 5px;
   transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
 }
 .header__nav__main a.link-primary {
   font-size: 1.2rem;
@@ -64,11 +65,11 @@ body {
   padding: 1rem;
 }
 .header__nav__main__sub {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   background: #eee;
   border-radius: 0.5rem;
-  transition: all 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 .header__nav__main__sub a {
   font-size: 1rem;
