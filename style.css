@@ -13,6 +13,10 @@ p {
   line-height: 1.8rem;
 }
 
+div, section, header, footer {
+  border: 1px dashed #ddd;
+}
+
 body {
   background-color: #fff;
   font-family: "Overpass", sans-serif;
@@ -33,83 +37,21 @@ body {
   border-radius: 0 0 0 5rem;
   color: white;
 }
-.header__nav {
-  display: none;
-  position: absolute;
-  top: 5rem;
-  left: 10vw;
-  width: 80vw;
-  margin: auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 5px 5px 1rem 0.1rem rgba(0, 0, 0, 0.2);
-}
-.header__nav a {
-  color: #4b5862;
-  text-decoration: none;
-  font-weight: 600;
-}
-.header__nav a:hover {
-  color: #25252d;
-}
-.header__nav img {
-  margin: 3px 3px 3px 5px;
-  transform: rotate(0deg);
-  transition: transform 0.3s ease-in-out;
-}
-.header__nav__main a.link-primary {
-  font-size: 1.2rem;
-}
-.header__nav__main li {
-  padding: 1rem;
-}
-.header__nav__main__sub {
-  max-height: 0;
-  overflow: hidden;
-  background: #eee;
-  border-radius: 0.5rem;
-  transition: max-height 0.3s ease-in-out;
-}
-.header__nav__main__sub a {
-  font-size: 1rem;
-}
-.header__nav__main__sub a::after {
-  content: "";
-}
-.header__nav .divider {
-  margin: 1rem 0 1rem 0;
-  color: #c8c8cb;
-  border-top: 1px solid #c8c8cb;
-  width: 90% px;
-  height: 0px;
-}
-.header__nav .menu__buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem;
-}
-.header__nav .menu__buttons button {
-  margin: 0.5rem;
-  padding: 1rem;
-}
-.header__nav .menu__buttons #btn-login {
+.header #btn-login {
   width: 80%;
   color: #25252d;
   background: white;
 }
-.header__nav .menu__buttons #btn-login:active, .header__nav .menu__buttons #btn-login:hover {
+.header #btn-login:active, .header #btn-login:hover {
   color: white;
   background-color: #ff7a85;
 }
-.header__nav .menu__buttons #btn-signup {
+.header #btn-signup {
   width: 80%;
   color: white;
   background: linear-gradient(#ff8f70, #ff3d54);
 }
-.header__nav .menu__buttons #btn-signup:active, .header__nav .menu__buttons #btn-signup:hover {
+.header #btn-signup:active, .header #btn-signup:hover {
   color: #ff525d;
   background: white;
 }
@@ -240,6 +182,149 @@ body {
 }
 .footer ul {
   margin: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    left: 10vw;
+    width: 80vw;
+    margin: auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 1rem 0.1rem rgba(0, 0, 0, 0.2);
+  }
+  .header__nav a {
+    color: #4b5862;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .header__nav a:hover {
+    color: #25252d;
+  }
+  .header__nav img {
+    margin: 3px 3px 3px 5px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  .header__nav__main a.link-primary {
+    font-size: 1.2rem;
+  }
+  .header__nav__main li {
+    padding: 1rem;
+  }
+  .header__nav__main__sub {
+    max-height: 0;
+    overflow: hidden;
+    background: #eee;
+    border-radius: 0.5rem;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .header__nav__main__sub a {
+    font-size: 1rem;
+  }
+  .header__nav__main__sub a::after {
+    content: "";
+  }
+  .header__nav .divider {
+    margin: 1rem 0 1rem 0;
+    color: #c8c8cb;
+    border-top: 1px solid #c8c8cb;
+    width: 90% px;
+    height: 0px;
+  }
+  .header__nav .menu__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+  }
+  .header__nav .menu__buttons button {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 701px) {
+  .header__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__top #img-logo {
+    margin: 2rem;
+    height: 40px;
+    width: auto;
+  }
+  .header__top #burger {
+    display: none;
+  }
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+  }
+  .header__nav .menu {
+    max-height: 3rem;
+  }
+  .header__nav__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .header__nav a {
+    color: #4b5862;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .header__nav a:hover {
+    color: #25252d;
+  }
+  .header__nav img {
+    margin: 3px 3px 3px 5px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  .header__nav__main a.link-primary {
+    font-size: 1.2rem;
+  }
+  .header__nav__main li {
+    padding: 1rem;
+  }
+  .header__nav__main__sub {
+    max-height: 0;
+    overflow: hidden;
+    background: #eee;
+    border-radius: 0.5rem;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .header__nav__main__sub a {
+    font-size: 1rem;
+  }
+  .header__nav__main__sub a::after {
+    content: "";
+  }
+  .header__nav .divider {
+    display: none;
+  }
+  .header__nav .menu__buttons {
+    display: flex;
+    flex-direction: row;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+  }
+  .header__nav .menu__buttons button {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -31,7 +31,7 @@ p {
 }
 //  ##################################################
 div, section, header, footer {
-    // border: 1px dashed white;
+    border: 1px dashed #ddd;
 }
 //  ##################################################
 
@@ -60,98 +60,25 @@ body {
     border-radius: 0 0 0 5rem;
     color: white;
 
-
-
-    &__nav {
-        display: none;
-        position: absolute;
-        top: 5rem;
-        left: 10vw;
-        width: 80vw;
-        margin: auto;
-        padding: 2rem;
+    #btn-login {
+        width: 80%;
+        color: $blue3;
         background: white;
-        border-radius: 1rem;
-
-        box-shadow: 5px 5px 1rem .1rem rgba(0,0,0, 0.2);
-        a {
-            color: $blue2;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        a:hover {
-            color: $blue3;
-        }
-        img {
-            margin: 3px 3px 3px 5px;
-            transform: rotate(0deg);
-            transition: transform 0.3s ease-in-out;
-        }
-        &__main {
-            a.link-primary {
-                font-size: 1.2rem;
-            }
-            li {
-                padding: 1rem;
-            }
-        }
-        &__main__sub {
-            max-height: 0;
-            overflow: hidden;
-            background: #eee;
-            border-radius: .5rem;
-
-            transition: max-height 0.3s ease-in-out;
-            a {
-                font-size: 1rem;
-            }
-            a::after {
-                content: '';
-            }
-        }
-        .divider {
-            margin: 1rem 0 1rem 0;
-            color: $blue1;
-            border-top: 1px solid $blue1;
-            width: 90%px;
-            height: 0px;
-        }
-        .menu__buttons {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 2rem;
-            button {
-                margin: .5rem;
-                padding: 1rem;
-            }
-
-            #btn-login {
-                width: 80%;
-                color: $blue3;
-                background: white;
-            }
-            #btn-login:active, #btn-login:hover {
-                color: white;
-                background-color: $vlred;
-            }
-        
-            #btn-signup {
-                width: 80%;
-                color: white;
-                background: $grad-red;
-            }
-            #btn-signup:active, #btn-signup:hover {
-                color: $lred;
-                background: white;
-            }
-        }
-
-        
-
+    }
+    #btn-login:active, #btn-login:hover {
+        color: white;
+        background-color: $vlred;
     }
 
+    #btn-signup {
+        width: 80%;
+        color: white;
+        background: $grad-red;
+    }
+    #btn-signup:active, #btn-signup:hover {
+        color: $lred;
+        background: white;
+    }
 
     &__top {
         display: flex;
@@ -222,7 +149,8 @@ body {
         color: $lred;
         background: white;
     }
-}
+
+}    
 
 .s1, .s3 {
     color: $blue2;
@@ -302,3 +230,166 @@ body {
         margin: 1rem;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .header {
+        &__nav {
+            display: none;
+            position: absolute;
+            top: 5rem;
+            left: 10vw;
+            width: 80vw;
+            margin: auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+    
+            box-shadow: 5px 5px 1rem .1rem rgba(0,0,0, 0.2);
+            a {
+                color: $blue2;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            a:hover {
+                color: $blue3;
+            }
+            img {
+                margin: 3px 3px 3px 5px;
+                transform: rotate(0deg);
+                transition: transform 0.3s ease-in-out;
+            }
+            &__main {
+                a.link-primary {
+                    font-size: 1.2rem;
+                }
+                li {
+                    padding: 1rem;
+                }
+            }
+            &__main__sub {
+                max-height: 0;
+                overflow: hidden;
+                background: #eee;
+                border-radius: .5rem;
+    
+                transition: max-height 0.3s ease-in-out;
+                a {
+                    font-size: 1rem;
+                }
+                a::after {
+                    content: '';
+                }
+            }
+            .divider {
+                margin: 1rem 0 1rem 0;
+                color: $blue1;
+                border-top: 1px solid $blue1;
+                width: 90%px;
+                height: 0px;
+            }
+            .menu__buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 2rem;
+                button {
+                    margin: .5rem;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 701px) {
+    .header {
+        &__top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        
+            #img-logo {
+                margin: 2rem;
+                height: 40px;
+                width: auto;
+            }
+            #burger {
+                display: none;
+            }
+            
+        }
+        &__nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 2rem;
+            
+            .menu {
+                max-height: 3rem;
+            }
+            &__main {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: stretch;
+            }
+            a {
+                color: $blue2;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            a:hover {
+                color: $blue3;
+            }
+            img {
+                margin: 3px 3px 3px 5px;
+                transform: rotate(0deg);
+                transition: transform 0.3s ease-in-out;
+            }
+            &__main {
+                a.link-primary {
+                    font-size: 1.2rem;
+                }
+                li {
+                    padding: 1rem;
+                }
+            }
+            &__main__sub {
+                max-height: 0;
+                overflow: hidden;
+                background: #eee;
+                border-radius: .5rem;
+    
+                transition: max-height 0.3s ease-in-out;
+                a {
+                    font-size: 1rem;
+                }
+                a::after {
+                    content: '';
+                }
+            }
+            .divider {
+                display: none;
+            }
+            .menu__buttons {
+                display: flex;
+                flex-direction: row;
+                width: 20rem;
+                justify-content: center;
+                align-items: center;
+                margin: 2rem;
+                button {
+                    margin: .5rem;
+                    padding: 1rem;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+

@@ -65,14 +65,18 @@ const linkClicked = (e) => {
 
 
 primaryLinks.forEach(link => link.addEventListener('click', linkClicked));
-burger.addEventListener('click', menuOpen);
-// ############# ZAMYKANIE MENU
-document.addEventListener('click', e => {
-    if (isOpen && burger.contains(e.target) || nav.contains(e.target) ) {
-        return;
-    } else {
-        burgerIcon.src = './images/icon-hamburger.svg';
-        nav.style.display = 'none';
-        isOpen = false;
-    }
-})
+
+if (window.matchMedia('(max-width: 700px').matches) {
+    burger.addEventListener('click', menuOpen);
+    // ############# ZAMYKANIE MENU
+    document.addEventListener('click', e => {
+    
+        if (isOpen && burger.contains(e.target) || nav.contains(e.target) ) {
+            return;
+        } else {
+            burgerIcon.src = './images/icon-hamburger.svg';
+            nav.style.display = 'none';
+            isOpen = false;
+        }
+    })
+} 
