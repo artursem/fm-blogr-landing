@@ -14,7 +14,6 @@ const menuOpen = () => {
         burgerIcon.src = './images/icon-hamburger.svg';
         nav.style.display = 'none';
         isOpen = false;
-        // isRolled = false; ##########################################
     } else {
         burgerIcon.src = './images/icon-close.svg';
         nav.style.display = 'block'
@@ -25,7 +24,6 @@ let isRolled = false;
 const rollMenu = (i) => {
     if (isRolled === false) {
         primaryArrows[i].style.transform = 'rotate(180deg)';
-        // secondaryList[i].style.display = 'block';
         
         secondaryList[i].style.maxHeight = '1000px';
 
@@ -33,18 +31,15 @@ const rollMenu = (i) => {
         return isRolled;
     } else if (isRolled === i) {
         primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
-        // secondaryList.forEach(list => list.style.display = 'none');
         secondaryList.forEach(list => list.style.maxHeight = '0');
 
         isRolled = false;
         return isRolled;
     } else {
         primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
-        // secondaryList.forEach(list => list.style.display = 'none');
         secondaryList.forEach(list => list.style.maxHeight = '0');
 
         primaryArrows[i].style.transform = 'rotate(180deg)';
-        // secondaryList[i].style.display = 'block';
         secondaryList[i].style.maxHeight = '1000px';
         isRolled = i;
         return isRolled;
@@ -66,7 +61,7 @@ const linkClicked = (e) => {
 
 primaryLinks.forEach(link => link.addEventListener('click', linkClicked));
 
-if (window.matchMedia('(max-width: 700px').matches) {
+if (window.matchMedia('(max-width: 1000px').matches) {
     burger.addEventListener('click', menuOpen);
     // ############# ZAMYKANIE MENU
     document.addEventListener('click', e => {
@@ -78,5 +73,20 @@ if (window.matchMedia('(max-width: 700px').matches) {
             nav.style.display = 'none';
             isOpen = false;
         }
-    })
-} 
+    });
+    primaryArrows.forEach(arrow => arrow.src='./images/icon-arrow-dark.svg');
+} else {
+    document.addEventListener('click', e => {
+    
+        if (isRolled && nav.contains(e.target) ) {
+            return;
+        } else {
+            primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
+            secondaryList.forEach(list => list.style.maxHeight = '0');
+            isRolled = false;
+            return isRolled;
+        }
+    });
+
+    primaryArrows.forEach(arrow => arrow.src='./images/icon-arrow-light.svg');
+}
