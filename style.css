@@ -13,10 +13,6 @@ p {
   line-height: 1.8rem;
 }
 
-div, section, header, footer {
-  border: 1px dashed #ddd;
-}
-
 body {
   background-color: #fff;
   font-family: "Overpass", sans-serif;
@@ -36,24 +32,6 @@ body {
   align-items: stretch;
   border-radius: 0 0 0 5rem;
   color: white;
-}
-.header #btn-login {
-  width: 80%;
-  color: #25252d;
-  background: white;
-}
-.header #btn-login:active, .header #btn-login:hover {
-  color: white;
-  background-color: #ff7a85;
-}
-.header #btn-signup {
-  width: 80%;
-  color: white;
-  background: linear-gradient(#ff8f70, #ff3d54);
-}
-.header #btn-signup:active, .header #btn-signup:hover {
-  color: #ff525d;
-  background: white;
 }
 .header__top {
   display: flex;
@@ -184,7 +162,7 @@ body {
   margin: 1rem;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
   .header__nav {
     display: none;
     position: absolute;
@@ -247,8 +225,26 @@ body {
     margin: 0.5rem;
     padding: 1rem;
   }
+  .header #btn-login {
+    width: 80%;
+    color: #25252d;
+    background: white;
+  }
+  .header #btn-login:active, .header #btn-login:hover {
+    color: white;
+    background-color: #ff7a85;
+  }
+  .header #btn-signup {
+    width: 80%;
+    color: white;
+    background: linear-gradient(#ff8f70, #ff3d54);
+  }
+  .header #btn-signup:active, .header #btn-signup:hover {
+    color: #ff525d;
+    background: white;
+  }
 }
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 1001px) {
   .header__top {
     display: flex;
     flex-direction: row;
@@ -256,7 +252,6 @@ body {
     align-items: center;
   }
   .header__top #img-logo {
-    margin: 2rem;
     height: 40px;
     width: auto;
   }
@@ -264,10 +259,12 @@ body {
     display: none;
   }
   .header__nav {
+    flex: 1;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
   }
   .header__nav .menu {
     max-height: 3rem;
@@ -281,18 +278,24 @@ body {
   .header__nav a {
     color: #4b5862;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 300;
   }
   .header__nav a:hover {
-    color: #25252d;
+    font-weight: 600;
   }
   .header__nav img {
-    margin: 3px 3px 3px 5px;
+    margin: 2px;
     transform: rotate(0deg);
     transition: transform 0.3s ease-in-out;
   }
   .header__nav__main a.link-primary {
-    font-size: 1.2rem;
+    color: white;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+  .header__nav__main a.link-primary:hover {
+    font-weight: 600;
+    text-decoration: underline;
   }
   .header__nav__main li {
     padding: 1rem;
@@ -302,7 +305,15 @@ body {
     overflow: hidden;
     background: #eee;
     border-radius: 0.5rem;
+    position: relative;
+    top: 1rem;
+    z-index: 2;
     transition: max-height 0.3s ease-in-out;
+    text-align: left;
+    box-shadow: 5px 5px 1rem 0.1rem rgba(0, 0, 0, 0.2);
+  }
+  .header__nav__main__sub li {
+    padding: 1rem 3rem 1rem 1rem;
   }
   .header__nav__main__sub a {
     font-size: 1rem;
@@ -316,14 +327,31 @@ body {
   .header__nav .menu__buttons {
     display: flex;
     flex-direction: row;
-    width: 20rem;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
   }
   .header__nav .menu__buttons button {
+    font-size: 0.8rem;
     margin: 0.5rem;
     padding: 1rem;
+  }
+  .header #btn-login {
+    width: 120px;
+    color: #25252d;
+    background: white;
+  }
+  .header #btn-login:active, .header #btn-login:hover {
+    color: white;
+    background-color: #ff7a85;
+  }
+  .header #btn-signup {
+    width: 120px;
+    color: white;
+    background: linear-gradient(#ff8f70, #ff3d54);
+  }
+  .header #btn-signup:active, .header #btn-signup:hover {
+    color: #ff525d;
+    background: white;
   }
 }
 

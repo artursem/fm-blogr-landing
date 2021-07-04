@@ -31,7 +31,7 @@ p {
 }
 //  ##################################################
 div, section, header, footer {
-    border: 1px dashed #ddd;
+    // border: 1px dashed #ddd;
 }
 //  ##################################################
 
@@ -60,25 +60,7 @@ body {
     border-radius: 0 0 0 5rem;
     color: white;
 
-    #btn-login {
-        width: 80%;
-        color: $blue3;
-        background: white;
-    }
-    #btn-login:active, #btn-login:hover {
-        color: white;
-        background-color: $vlred;
-    }
-
-    #btn-signup {
-        width: 80%;
-        color: white;
-        background: $grad-red;
-    }
-    #btn-signup:active, #btn-signup:hover {
-        color: $lred;
-        background: white;
-    }
+    
 
     &__top {
         display: flex;
@@ -231,7 +213,7 @@ body {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
     .header {
         &__nav {
             display: none;
@@ -299,10 +281,29 @@ body {
                 }
             }
         }
+        #btn-login {
+            width: 80%;
+            color: $blue3;
+            background: white;
+        }
+        #btn-login:active, #btn-login:hover {
+            color: white;
+            background-color: $vlred;
+        }
+    
+        #btn-signup {
+            width: 80%;
+            color: white;
+            background: $grad-red;
+        }
+        #btn-signup:active, #btn-signup:hover {
+            color: $lred;
+            background: white;
+        }
     }
 }
 
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 1001px) {
     .header {
         &__top {
             display: flex;
@@ -311,7 +312,6 @@ body {
             align-items: center;
         
             #img-logo {
-                margin: 2rem;
                 height: 40px;
                 width: auto;
             }
@@ -321,11 +321,12 @@ body {
             
         }
         &__nav {
+            flex: 1;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             align-items: center;
-            padding: 2rem;
-            
+            padding: 1rem;
             .menu {
                 max-height: 3rem;
             }
@@ -338,19 +339,26 @@ body {
             a {
                 color: $blue2;
                 text-decoration: none;
-                font-weight: 600;
+                font-weight: 300;
             }
             a:hover {
-                color: $blue3;
+                font-weight: 600;
+
             }
             img {
-                margin: 3px 3px 3px 5px;
+                margin: 2px;
                 transform: rotate(0deg);
                 transition: transform 0.3s ease-in-out;
             }
             &__main {
                 a.link-primary {
-                    font-size: 1.2rem;
+                    color: white;
+                    font-weight: 300;
+                    font-size: 1rem;
+                }
+                a.link-primary:hover {
+                    font-weight: 600;
+                    text-decoration: underline;
                 }
                 li {
                     padding: 1rem;
@@ -361,8 +369,17 @@ body {
                 overflow: hidden;
                 background: #eee;
                 border-radius: .5rem;
-    
+                position: relative;
+                top: 1rem;
+                z-index: 2;
                 transition: max-height 0.3s ease-in-out;
+                text-align: left;
+
+                box-shadow: 5px 5px 1rem .1rem rgba(0,0,0, 0.2);
+                li {
+                    padding: 1rem 3rem 1rem 1rem;
+
+                }
                 a {
                     font-size: 1rem;
                 }
@@ -376,16 +393,36 @@ body {
             .menu__buttons {
                 display: flex;
                 flex-direction: row;
-                width: 20rem;
+
                 justify-content: center;
                 align-items: center;
-                margin: 2rem;
                 button {
+                    font-size: 0.8rem;
                     margin: .5rem;
                     padding: 1rem;
                 }
             }
 
+        }
+        // ########################### DO ZMIANY
+        #btn-login {
+            width: 120px;
+            color: $blue3;
+            background: white;
+        }
+        #btn-login:active, #btn-login:hover {
+            color: white;
+            background-color: $vlred;
+        }
+    
+        #btn-signup {
+            width: 120px;
+            color: white;
+            background: $grad-red;
+        }
+        #btn-signup:active, #btn-signup:hover {
+            color: $lred;
+            background: white;
         }
     }
 }

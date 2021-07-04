@@ -24,7 +24,6 @@ let isRolled = false;
 const rollMenu = (i) => {
     if (isRolled === false) {
         primaryArrows[i].style.transform = 'rotate(180deg)';
-        
         secondaryList[i].style.maxHeight = '1000px';
 
         isRolled = i;
@@ -77,10 +76,8 @@ if (window.matchMedia('(max-width: 1000px').matches) {
     primaryArrows.forEach(arrow => arrow.src='./images/icon-arrow-dark.svg');
 } else {
     document.addEventListener('click', e => {
-    
-        if (isRolled && nav.contains(e.target) ) {
-            return;
-        } else {
+        if (isRolled !== false && !nav.contains(e.target)) {
+            console.log('close me');
             primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
             secondaryList.forEach(list => list.style.maxHeight = '0');
             isRolled = false;
