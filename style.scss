@@ -462,6 +462,20 @@ body {
             flex: 1;
         }
     }
+    .s1, .s3 {
+        &__illustration1, &__illustration3 {
+            width: 90vw;
+            height: min(80vw, 500px);
+        }
+        &__illustration1 {
+            width: 90vw;
+            height: min(80vw, 500px);
+            background: url('./images/illustration-editor-mobile.svg') center no-repeat;
+        }
+        &__illustration3 {
+            background: url('./images/illustration-laptop-mobile.svg') center no-repeat;
+        }
+    }
     .footer {
         display: flex;
         flex-direction: row;

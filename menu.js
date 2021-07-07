@@ -77,7 +77,6 @@ if (window.matchMedia('(max-width: 1000px').matches) {
 } else {
     document.addEventListener('click', e => {
         if (isRolled !== false && !nav.contains(e.target)) {
-            console.log('close me');
             primaryArrows.forEach(arrow => arrow.style.transform = 'rotate(0)');
             secondaryList.forEach(list => list.style.maxHeight = '0');
             isRolled = false;
