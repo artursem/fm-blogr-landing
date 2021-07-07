@@ -388,6 +388,19 @@ body {
     flex: 1;
   }
 
+  .s1__illustration1, .s1__illustration3, .s3__illustration1, .s3__illustration3 {
+    width: 90vw;
+    height: min(80vw, 500px);
+  }
+  .s1__illustration1, .s3__illustration1 {
+    width: 90vw;
+    height: min(80vw, 500px);
+    background: url("./images/illustration-editor-mobile.svg") center no-repeat;
+  }
+  .s1__illustration3, .s3__illustration3 {
+    background: url("./images/illustration-laptop-mobile.svg") center no-repeat;
+  }
+
   .footer {
     display: flex;
     flex-direction: row;
